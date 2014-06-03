@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Twenty</title>
+    <title>TeamStream</title>
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
 
 
@@ -26,35 +26,23 @@
   </head>
 
   <body ng-app="app" ng-controller="AppCtrl">
-    
-    <!-- Header -->
-    <div id="top-nav" class="navbar navbar-inverse navbar-static-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-              <span class="icon-toggle"></span>
-          </button>
-          <a class="navbar-brand" href="#">My TeamStream</a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            
-            <li class="dropdown">
-              <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="#"><i class="glyphicon glyphicon-user"></i> Admin <span class="caret"></span></a>
-              <ul id="g-account-menu" class="dropdown-menu" role="menu">
-                <li><a href="#">My Profile</a></li>
-              </ul>
-            </li>
-            <li><a href="#"><i class="glyphicon glyphicon-lock"></i> Logout</a></li>
-          </ul>
-        </div>
-      </div><!-- /container -->
-    </div>
-    <!-- /Header -->
 
-    <div class="container">
-      <div ng-view></div>
-    </div>
+    <h1>Team Stream 3.0</h1>
+    
+    <h3>Choose teams:</h3>
+    <ul ng-controller="AllTeamsCtrl">
+      <li ng-repeat="team in teams"><a href='#'>{{ team.teamname }}</a></li>
+    </ul>
+
+    <h3>Your teams:</h3>
+    <ul ng-controller="UserTeamsCtrl">
+      <li ng-repeat="team in teams"><a href='#'>{{ team.teamname }}</a></li>
+    </ul>
+
+    <h3>Headlines from your teams:</h3>
+    <ul ng-controller="HeadlinesCtrl">
+      <li ng-repeat="headline in headlines"><a href="{{ headline.links.web.href }}">{{ headline.headline }}</a></li>
+    </ul>
 
   </body>
 

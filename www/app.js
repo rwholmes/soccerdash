@@ -27,11 +27,3 @@ angular.module('app', [
 });
 
 
-
-
-
-
-
-
-
-
