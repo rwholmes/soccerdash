@@ -1,0 +1,13 @@
+{
+  "name": "teamstream-3.0",
+  "version": "1.0.0",
+  "description": "a soccer newsfeed app",
+  "dependencies": {
+    "express": "^4.1.0",
+    "body-parser": "^1.0.2"
+  },
+  "devDependencies": {
+    "mocha": "^1.18.2",
+    "chai": "^1.9.1"
+  }
+}

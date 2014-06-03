@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Twenty</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
+
+    <!-- your app's css -->
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/teamstream.css" rel="stylesheet">
+
+    <!-- lib scripts -->
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="bower_components/underscore/underscore.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- controllers -->
+    <script src="app.js"></script>
+
+    <!-- services -->
+
+  </head>
+
+  <body ng-app="app" ng-controller="AppCtrl">
+    
+    <!-- Header -->
+    <div id="top-nav" class="navbar navbar-inverse navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="icon-toggle"></span>
+          </button>
+          <a class="navbar-brand" href="#">My TeamStream</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            
+            <li class="dropdown">
+              <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="#"><i class="glyphicon glyphicon-user"></i> Admin <span class="caret"></span></a>
+              <ul id="g-account-menu" class="dropdown-menu" role="menu">
+                <li><a href="#">My Profile</a></li>
+              </ul>
+            </li>
+            <li><a href="#"><i class="glyphicon glyphicon-lock"></i> Logout</a></li>
+          </ul>
+        </div>
+      </div><!-- /container -->
+    </div>
+    <!-- /Header -->
+
+    <div class="container">
+      <div ng-view></div>
+    </div>
+
+  </body>
+
+</html>

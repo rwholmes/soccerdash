@@ -1,0 +1,23 @@
+{
+  "name": "Teamstream",
+  "version": "1.3",
+  "authors": [
+    "Robert <rwholmes1@gmail.com>"
+  ],
+  "description": "A soccer newsfeed app",
+  "main": "index.html",
+  "license": "MIT",
+  "homepage": "http://teamstream.azurewebsites.net",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "angular-ui-router": "~0.2.10",
+    "underscore": "~1.6.0",
+    "angular-animate": "~1.2.16",
+    "bootstrap": "~3.1.1"
+  }
+}
