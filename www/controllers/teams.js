@@ -4,7 +4,13 @@ angular.module('app.teams', [])
   
   Teams.getTeams().then(function(data) {
   	$scope.teams = data.data.sports[0].leagues[0].teams;
-  	console.log($scope.teams);
   });
+
+  $scope.userTeams = Teams.getUserTeams();
+
+  $scope.addTeam = function(team) {
+  	console.log('calling add team');
+  	Teams.addUserTeam(team);
+  }
 
 }]);

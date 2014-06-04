@@ -35,20 +35,22 @@
 
     <h1>Team Stream 3.0</h1>
     
-    <h3>Choose teams:</h3>
-    <ul ng-controller="TeamsCtrl">
-      <li ng-repeat="team in teams"><a href='#'>{{ team.name }}</a></li>
-    </ul>
+    <div class="teams" ng-controller="TeamsCtrl">
+      <h3>Choose teams:</h3>
+      <ul>
+        <li ng-repeat="team in teams"><a ng-click="addTeam(team)">{{ team.name }}</a></li>
+      </ul>
 
-   <!--  <h3>Your teams:</h3>
-    <ul ng-controller="UserTeamsCtrl">
-      <li ng-repeat="team in teams"><a href='#'>{{ team.teamname }}</a></li>
-    </ul>
+      <h3>Your teams:</h3>
+      <ul>
+        <li ng-repeat="team in userTeams"><a href='#'>{{ team.name }}</a></li>
+      </ul>
+    </div>
 
     <h3>Headlines from your teams:</h3>
     <ul ng-controller="HeadlinesCtrl">
       <li ng-repeat="headline in headlines"><a href="{{ headline.links.web.href }}">{{ headline.headline }}</a></li>
-    </ul> -->
+    </ul>
 
   </body>
 
