@@ -1,14 +1,10 @@
+angular.module('app.teams', [])
 
-app.controller('TeamsCtrl', function($scope, $http, linkServices) {
-  var teams = linkServices.getTeams().then(function(data) {
-    $scope.teams = data;
+.controller('TeamsCtrl', ['$scope', 'Teams', function($scope, Teams) {
+  
+  Teams.getTeams().then(function(data) {
+  	$scope.teams = data.data.sports[0].leagues[0].teams;
+  	console.log($scope.teams);
   });
-  $scope.remove = function() {
-    console.log('trying to remove ang-shortly');
-    $http({
-      method: 'POST',
-      url: '/removeTeams',
-      data: {}
-    });
-  };
-});
+
+}]);

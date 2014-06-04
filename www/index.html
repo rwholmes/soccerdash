@@ -14,14 +14,20 @@
     <!-- lib scripts -->
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
     <script src="bower_components/underscore/underscore.js"></script>
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
     <!-- controllers -->
     <script src="app.js"></script>
+    <script src="controllers/headlines.js"></script>
+    <script src="controllers/teams.js"></script>
 
     <!-- services -->
+    <script src="services/espn.js"></script>
+    <script src="services/headlines.js"></script>
+    <script src="services/teams.js"></script>
 
   </head>
 
@@ -30,11 +36,11 @@
     <h1>Team Stream 3.0</h1>
     
     <h3>Choose teams:</h3>
-    <ul ng-controller="AllTeamsCtrl">
-      <li ng-repeat="team in teams"><a href='#'>{{ team.teamname }}</a></li>
+    <ul ng-controller="TeamsCtrl">
+      <li ng-repeat="team in teams"><a href='#'>{{ team.name }}</a></li>
     </ul>
 
-    <h3>Your teams:</h3>
+   <!--  <h3>Your teams:</h3>
     <ul ng-controller="UserTeamsCtrl">
       <li ng-repeat="team in teams"><a href='#'>{{ team.teamname }}</a></li>
     </ul>
@@ -42,7 +48,7 @@
     <h3>Headlines from your teams:</h3>
     <ul ng-controller="HeadlinesCtrl">
       <li ng-repeat="headline in headlines"><a href="{{ headline.links.web.href }}">{{ headline.headline }}</a></li>
-    </ul>
+    </ul> -->
 
   </body>
 

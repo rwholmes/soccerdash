@@ -1,29 +1,33 @@
 angular.module('app', [
-  'ui.router'
+  'ui.router',
+  'app.services.espn',
+  'app.services.teams',
+  'app.services.headlines',
+  'app.teams',
+  'app.headlines'
 ])
 
 .controller('AppCtrl', function($scope) {
   
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
   $stateProvider
 
-  .state('main', {
-    url: '/',
-    templateUrl: 'linksList.html',
-    controller: 'appController'
-  })
-  
-  .state('create', {
-    url: '/create',
-    templateUrl: 'createLink.html',
-    controller: 'Ctrl'
-  });
-
+    .state('main', {
+      url: '/',
+      templateUrl: 'linksList.html',
+      controller: 'appController'
+    })
+    
+    .state('create', {
+      url: '/create',
+      templateUrl: 'createLink.html',
+      controller: 'Ctrl'
+    });
 
   $urlRouterProvider.when('', '/');
 
-});
+}]);
 
 
