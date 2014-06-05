@@ -26,7 +26,6 @@ angular.module('app.services.espn', [])
 	};
 
 	this.get = function(league, type, teamId) {
-		console.log('calling Espn get');
 		var url = baseUrl + '/' + leagues[league] + '/' + dataType[type];
 		if (teamId) {
 			parameters.teams = teamId;
