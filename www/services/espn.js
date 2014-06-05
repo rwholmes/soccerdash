@@ -17,6 +17,7 @@ angular.module('app.services.espn', [])
 	}
 
 	var baseUrl = 'http://api.espn.com/v1/sports/soccer';
+	var apikey = process.env.APIKEY;
 
 	var parameters = {
 		// enter your developer api key here
