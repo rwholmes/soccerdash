@@ -45,9 +45,15 @@
       <ul>
         <li ng-repeat="team in userTeams"><a href='#'>{{ team.name }}</a></li>
       </ul>
+
+      <h3>Your Headlines:</h3>
+      <ul>
+        <li ng-repeat="headline in userHeadlines"><a href="{{ headline.links.web.href }}">{{ headline.headline }}</a></li>
+      </ul>
+
     </div>
 
-    <h3>Headlines from your teams:</h3>
+    <h3>All Headlines:</h3>
     <ul ng-controller="HeadlinesCtrl">
       <li ng-repeat="headline in headlines"><a href="{{ headline.links.web.href }}">{{ headline.headline }}</a></li>
     </ul>

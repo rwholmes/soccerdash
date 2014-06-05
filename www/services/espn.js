@@ -12,11 +12,11 @@ angular.module('app.services.espn', [])
 	};
 
 	var dataType = {
-		teams: '/teams',
-		headlines: '/news'
+		teams: 'teams',
+		headlines: 'news'
 	}
 
-	var baseUrl = 'http://api.espn.com/v1/sports/soccer/';
+	var baseUrl = 'http://api.espn.com/v1/sports/soccer';
 
 	var parameters = {
 		// enter your developer api key here
@@ -27,7 +27,10 @@ angular.module('app.services.espn', [])
 
 	this.get = function(league, type, teamId) {
 		console.log('calling Espn get');
-		var url = baseUrl + leagues[league] + dataType[type];
+		var url = baseUrl + '/' + leagues[league] + '/' + dataType[type];
+		if (teamId) {
+			parameters.teams = teamId;
+		}
 
 		return $http({
 	    url: url, 
@@ -35,10 +38,10 @@ angular.module('app.services.espn', [])
 	    params: parameters
 		})
 		.success(function(data){
-		  console.log('get teams success');
+		  console.log('ESPN get success');
 		})
 		.error(function(data) {
-		  console.log('Error getting teams.');
+		  console.log('ESPN get error');
 		});
 
 	}
