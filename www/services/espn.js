@@ -3,7 +3,12 @@ angular.module('app.services.espn', [])
 .service('Espn', ['$http', function($http) {
 	
 	var leagues = {
-		premier: '/eng.1'
+		premier: 'eng.1',
+		spanish: 'esp.1',
+		italian: 'ita.1',
+		french: 'fra.1',
+		german: 'ger.1',
+		mls: 'usa.1'
 	};
 
 	var dataType = {
@@ -11,28 +16,31 @@ angular.module('app.services.espn', [])
 		headlines: '/news'
 	}
 
-	var baseUrl = 'http://api.espn.com/v1/sports/soccer';
-	var apikey = 'qw7zmfchttxkkkfw9anwa7q4';
+	var baseUrl = 'http://api.espn.com/v1/sports/soccer/';
 
-	var data = {
-	  _accept: 'application/json',
-	  limit: 0,
-	  offset: 5
+	var parameters = {
+		// enter your developer api key here
+		apikey: "qw7zmfchttxkkkfw9anwa7q4",
+		// the type of data you're expecting back from the api
+		_accept: "application/json"
 	};
 
-	var cb = '&callback=JSON_CALLBACK';
-
-	this.get = function(league, type) {
+	this.get = function(league, type, teamId) {
 		console.log('calling Espn get');
-		var url = baseUrl + leagues[league] + dataType[type] + '/?apikey=' + apikey + cb;
+		var url = baseUrl + leagues[league] + dataType[type];
 
-		return $http.jsonp(url)
-    .success(function(data){
-      console.log('get teams success');
-    })
-    .error(function(data) {
-      console.log('Error getting teams.');
-    });
+		return $http({
+	    url: url, 
+	    method: "GET",
+	    params: parameters
+		})
+		.success(function(data){
+		  console.log('get teams success');
+		})
+		.error(function(data) {
+		  console.log('Error getting teams.');
+		});
+
 	}
 
 }]);
