@@ -8,15 +8,15 @@ MySoccerDash is a simple web app that allows user to track headlines related to 
 ### Technical
 
 MySoccerDash uses the following technologies:
- - AngularJS
- - Node
- - Express
+- AngularJS
+- Node
+- Express
  
- ==========
+==========
  
- ### Running and instance of this repo
+### Running and instance of this repo
  
- 1. Clone repo
- 2. npm install
- 3. bower install
- 4. nodemon server.js
+1. Clone repo
+2. npm install
+3. bower install
+4. nodemon server.js
