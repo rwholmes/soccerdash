@@ -1,5 +1,6 @@
 .DS_Store
 bower_components/
 node_modules/
-www/bower_components/
+azure.err
+iisnode.yml
 ._*
