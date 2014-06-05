@@ -21,7 +21,7 @@ angular.module('app.services.espn', [])
 
 	var parameters = {
 		// enter your developer api key here
-		apikey: "qw7zmfchttxkkkfw9anwa7q4",
+		apikey: apikey,
 		// the type of data you're expecting back from the api
 		_accept: "application/json"
 	};
